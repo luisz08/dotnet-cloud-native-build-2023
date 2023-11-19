@@ -1,6 +1,8 @@
 FROM mcr.microsoft.com/dotnet/nightly/sdk:8.0-preview-alpine AS build
 
-RUN apk add \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
+	&& apk update \
+	&& apk add \
 	# Add NativeAOT pre-reqs
 	clang build-base zlib-dev
 

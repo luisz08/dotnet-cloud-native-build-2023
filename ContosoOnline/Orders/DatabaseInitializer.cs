@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Nanorm;
+using Npgsql;
 
 namespace Orders;
 
